@@ -10,6 +10,7 @@ const ListenAgainCard = ({
           subtitle="Suraj Bisht"
           title="Listen again"
           avatar={userImage}
+          btn="More"
         />
         <div  className=' overflow-x-hidden hover:overflow-x-auto scrollbar whitespace-nowrap  gap-4 py-4  flex '>
           <Card
