@@ -23,9 +23,9 @@ const UpperCard = ({
         </div>
       </div>
       <div className='flex gap-10 justify-center items-center w-[20%] '>
-        <div className={`border border-gray-500 rounded-xl w-[50%] p-[5%_1%] flex justify-center items-center`}>
+        <button className={`border border-gray-500 rounded-xl w-[50%] p-[5%_1%] flex justify-center items-center`}>
           <div className='text-center flex justify-center items-center '>{btn}</div>
-        </div>
+        </button>
       </div>
     </div>
   )

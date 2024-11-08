@@ -8,7 +8,8 @@ import SearchBar from "./components/SearchBar";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import UpperCard from "./components/UpperCard";
-import ListenAgainCard from "./components/ListenAgainCard";
+import HorizontalCard from "./components/HorizontalCard";
+import TableCard from "./components/TableCard";
 
 export{
     LeftSide,
@@ -21,5 +22,6 @@ export{
     Button,
     Card,
     UpperCard,
-    ListenAgainCard
+    HorizontalCard,
+    TableCard
 }

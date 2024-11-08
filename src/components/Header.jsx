@@ -24,7 +24,7 @@ const Header = () => {
       }}>
       <div className='hamburger sm:pl-[6%] '><FontAwesomeIcon icon={faBars} className='sm:text-[26px] sm:p-[15px_12px]' /></div>
       </button>
-      <div className='logo border border-blue-600 sm:pl-[3%] font-extrabold h-auto' onClick={()=>{handleNavigate}}><Logo /></div>
+      <button className='logo border border-blue-600 sm:pl-[3%] font-extrabold h-auto' onClick={()=>{handleNavigate}}><Logo /></button>
       <div className='flex   items-center sm:ml-[13%] sm:p-[1%_0%] sm:my-[1%] sm:h-[3rem] border rounded-md sm:w-[31%]'>
         <div className='w-full sm:pl-2 items-cente'><SearchBar /></div>
 

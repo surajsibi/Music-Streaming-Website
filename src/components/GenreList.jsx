@@ -39,18 +39,21 @@ const GenreList = () => {
     <div>
       <div   style={{
           backgroundImage: `url(${genreImages[currGenres] || genreImages["defaultGenre"]})`,
-        }} className={`bg-[url("./assets/${currGenres}.jpg")] bg-cover bg-no-repeat bg-center h-[45vh]  relative `}>
+        }} className={` bg-cover bg-no-repeat bg-center h-[45vh]  relative `}>
       <div className='absolute inset-0 bg-gradient-to-b from-black/60 to-black/90 backdrop-blur-[1px]'></div>
         <div className='flex justify-between p-[3%_7%] relative z-10' >
           {genres.map((genre) =>(
             <Button
             key={genre}
-            className="hover:bg-[#1e2328] bg-[#9b999933]"
+            className={`hover:bg-[#1e2328] text-white bg-[#9b999933]  ${currGenres == genre ?"bg-[white] text-black hover:bg-[white] font-medium " :""}`}
             children={genre}
             bgColor=''
             onClick={()=>{setCurrGenres(genre)}}
+            
             />
+          
           ))}
+          
           
         </div>
       </div>
