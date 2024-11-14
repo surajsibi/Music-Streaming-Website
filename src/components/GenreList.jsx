@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {Button} from '../index'
-import WorkoutImage from '../assets/Workout.jpg'
-import CommuteImage from '../assets/Commute.jpg'
-import EnergizeImage from '../assets/Energize.jpg'
-import FeelgoodImage from '../assets/Feelgood.jpg'
-import FocusImage from '../assets/Focus.jpg'
-import LoveImage from '../assets/Love.jpg'
-import PartyImage from '../assets/Party.jpg'
-import RelaxImage from '../assets/relax.jpg'
-import SadImage from '../assets/Sad.jpg'
-import SleepImage from '../assets/Sleep.jpg'
-import HomeImage from '../assets/Home.jpg'
+import WorkoutImage from '../assets/genreImg/Workout.jpg'
+import CommuteImage from '../assets/genreImg/Commute.jpg'
+import EnergizeImage from '../assets/genreImg/Energize.jpg'
+import FeelgoodImage from '../assets/genreImg/Feelgood.jpg'
+import FocusImage from '../assets/genreImg/Focus.jpg'
+import LoveImage from '../assets/genreImg/Love.jpg'
+import PartyImage from '../assets/genreImg/Party.jpg'
+import RelaxImage from '../assets/genreImg/relax.jpg'
+import SadImage from '../assets/genreImg/Sad.jpg'
+import SleepImage from '../assets/genreImg/Sleep.jpg'
+import HomeImage from '../assets/genreImg/Home.jpg'
+import { useSelector, useDispatch } from 'react-redux'
+import {clearValue} from "../store/genreSlice"
 
 
 
@@ -31,9 +33,17 @@ const GenreList = () => {
   // Map other genres to their imported images here...
 };
   const [currGenres,setCurrGenres] = useState("")
+  const dispatch = useDispatch()
+  const homeClicked = useSelector((state)=>state.genre.value)
   const genres = ["Workout", "Feel good", "Energize","Relax","Romance","Party","Commute","Sad","Focus","Sleep" ]
+ 
+  useEffect(() => {
+    if (homeClicked.length > 0) {
+      setCurrGenres(homeClicked);
+      dispatch(clearValue())
+    }
+  }, [homeClicked])  
 
-  console.log(currGenres);
   
   return (
     <div>
@@ -45,7 +55,9 @@ const GenreList = () => {
           {genres.map((genre) =>(
             <Button
             key={genre}
-            className={`hover:bg-[#1e2328] text-white bg-[#9b999933]  ${currGenres == genre ?"bg-[white] text-black hover:bg-[white] font-medium " :""}`}
+            className={`hover:bg-[#1e2328] ${currGenres == genre
+              ? "bg-white text-gray-950 hover:bg-white font-medium "
+              : " text-white bg-[#9b999933]"}`}
             children={genre}
             bgColor=''
             onClick={()=>{setCurrGenres(genre)}}

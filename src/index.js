@@ -9,7 +9,7 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 import UpperCard from "./components/UpperCard";
 import HorizontalCard from "./components/HorizontalCard";
-import TableCard from "./components/TableCard";
+import TableCard from './components/TableCard'
 
 export{
     LeftSide,

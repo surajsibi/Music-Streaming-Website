@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState ={
     leftStatus:true,
+    
 }
 
 const hamburgerSlice = createSlice({
@@ -10,9 +11,9 @@ const hamburgerSlice = createSlice({
     reducers:{
       switcher:(state)=>{
         state.leftStatus = !state.leftStatus
-      }
-    }
+          }
+            }
 })
-export const {switcher} = hamburgerSlice.actions
+export const {switcher,homep} = hamburgerSlice.actions
 
 export default hamburgerSlice.reducer;

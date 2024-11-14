@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import GenreList from '../components/GenreList'
 import userImage from '../assets/userpic.jpg'
@@ -7,8 +7,8 @@ import { HorizontalCard, TableCard } from '../index'
 
 const Home = () => {
 
-  const status = useSelector((state)=>state.auth.status)
 
+  const status = useSelector((state)=>state.auth.status)
   return (
     <div className='relative'>
       <GenreList />
@@ -29,5 +29,6 @@ const Home = () => {
     </div>
   )
 }
+
 
 export default Home

@@ -4,7 +4,7 @@ const Button = ({
     children,
     type = "button",
     bgColor = "",
-    textColor = "text-white",
+    textColor = "",
     className = "",
     ...props
 }
